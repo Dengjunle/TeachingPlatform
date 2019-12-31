@@ -8,8 +8,8 @@ const actions = {
     },
     //获取学习信息的参数
     async getStudyParam(context,data){
-        context.commit('SET_STUDYPARAM',data)
         let result = await study.getStudyInfo(data.id)
+        context.commit('SET_STUDYPARAM',data)
         context.commit('SET_STUDYINFO',result)
     }
 }

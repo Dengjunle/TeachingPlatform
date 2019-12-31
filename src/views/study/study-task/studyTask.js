@@ -39,6 +39,8 @@ export default {
       this.$refs.modular.contentWindow.document.close()
       this.studyId = this.studyParam.id;
       this.curCode = this.studyInfo.codeTemplate;
+      this.$refs.task.contentWindow.document.write('')
+      this.$refs.task.contentWindow.document.close()
     },
     //提交作业代码
     submission() {

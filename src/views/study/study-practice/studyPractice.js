@@ -31,6 +31,8 @@ export default {
     },
     //获取学习课程id以及练一练代码内容
     start() {
+      this.$refs.practice.contentWindow.document.write('')
+      this.$refs.practice.contentWindow.document.close()
       this.studyId = this.studyParam.id;
       this.curCode = this.studyInfo.practiceCodeTemplate;
     },

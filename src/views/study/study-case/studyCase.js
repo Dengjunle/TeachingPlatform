@@ -31,6 +31,8 @@ export default {
     },
     //获取当前学习内容的id以及案例的代码
     start(){
+      this.$refs.anli.contentWindow.document.write('')
+      this.$refs.anli.contentWindow.document.close()
       this.studyId = this.studyParam.id;
       this.curCode=this.studyInfo.anLi.topic;
     }
