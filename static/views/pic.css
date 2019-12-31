@@ -1,0 +1,76 @@
+@charset "gb2312";
+/* CSS Document */
+
+.mouseOverStyle{
+   background-image: url(images/btn_over.gif);
+   color:#CC0099;
+   border:0px;
+	margin:0px;
+	padding:0px;
+	height:35px;
+	width: 130px;
+	font-size: 13px;	  
+}
+.mouseOutStyle{
+   background-image: url(images/btn_out.gif);
+   color:#0000FF;
+   border:0px;
+   margin:0px;
+   padding:0px;
+   height:35px;
+   width: 130px;
+   font-size: 13px;	  
+}
+body, p {
+color:#111111;
+font-size:12px;
+}
+/*设置无下划线的超连接样式*/
+a {
+	color: blue;
+	text-decoration: none;
+   }       
+a:hover{ /*鼠标在超链接上悬停时变为颜色*/
+   color: red;
+   }
+#RegisterForm {
+background:transparent url(images/title_register2.gif) no-repeat scroll 0pt;
+background-position:top;
+border:1px solid #DDDDDD;
+float:left;
+padding:30px 0pt 0pt 10px;
+width:320px;
+text-align:left;
+margin-top:15px;
+
+}
+#RegisterForm .Features {
+clear:both;
+color:#333333;
+line-height:32px;
+}
+#RegisterForm p {
+line-height:1.8em;
+margin:0pt 0pt 0pt 20px;
+}
+#RegisterForm .Features em {
+color:#0099FF;
+font-size:13px;
+font-style:normal;
+font-weight:bold;
+line-height:1em;
+margin:12px 0pt 0pt;
+}
+#RegisterForm .Features img {
+float:left;
+margin-right:13px;
+}
+#RegisterForm input{
+border:medium none;
+color:#FFFFFF;
+cursor:pointer;
+font-weight:bold;
+height:35px;
+vertical-align:middle;
+width:130px;
+}

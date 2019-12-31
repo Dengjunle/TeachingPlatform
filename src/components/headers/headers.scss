@@ -1,0 +1,47 @@
+.el-header {
+  height: 50px !important;
+  color: #ffffff;
+  background-color: #292929;
+
+}
+
+.headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  font-size: 16px;
+
+  .headers-title {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+
+    .icon-jquery {
+      font-size: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  .headers-content {
+    display: flex;
+    align-items: center;
+
+    .content-item {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      padding: 0 20px;
+      cursor:pointer;
+      .icon-login {
+        font-size: 22px;
+        margin-right: 10px;
+        color: #ffc400;
+      }
+    }
+
+    .content-item:hover {
+      background-color: black;
+    }
+  }
+}

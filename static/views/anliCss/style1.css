@@ -1,0 +1,24 @@
+@charset "utf-8";
+/*清除浏览器默认内、外边距*/
+* {
+	padding:0;
+	margin:0;
+}
+#test {
+	border-radius:6px;
+	margin-top:5px;
+	margin-bottom:15px;
+}
+div img{
+	width:30px;
+	height:30px;
+	border-radius:4px;
+	margin-left:12px;
+	margin-right:12px;
+}
+/*半透明*/
+.alpha{
+	 filter:alpha(Opacity=20);
+	 -moz-opacity:0.2;
+	 opacity:0.2;
+}

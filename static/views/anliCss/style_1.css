@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*清除浏览器默认内、外边距*/
+*{
+	margin:0;
+	padding:0;	
+}
+html{
+	background-color:#eee;
+	height:100%;
+}
+body{
+	padding:15px;
+	font-size:12px;
+	width:1000px;
+	background-color:#fff;
+	height:100%;
+	font-family:Tahoma;
+	border-left:20px solid #ccc;
+}
+ul{
+	list-style:none;
+	border-top:1px solid #999;
+	height:350px;
+	overflow-x:auto;
+	overflow-y:scroll;
+}
+span{
+	font-weight:bolder;
+	font-size:12px;
+}
+li{
+	border-bottom:1px dashed #666;
+	line-height:20px;
+}
+form{
+	margin-top:10px;
+	border-top:1px solid #999;
+}
+label{
+	display:block;
+	line-height:20px;
+	font-weight:bolder;
+	cursor:pointer;
+	background-color:#999;
+	color:#fff;
+	margin:5px 0;
+	padding-left:5px;
+	width:100%;
+}
+.text{
+	width:100%;
+	font-size:12px;
+	outline-color:#39C;
+}
+input[type="button"]{
+	display:block;
+	margin-top:3px;
+	border:1px solid #666;
+	padding:2px 5px;
+	width:100%;
+}

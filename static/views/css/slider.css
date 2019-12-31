@@ -1,0 +1,63 @@
+/*幻灯片CSS*/
+#slider {
+	float: left;
+	width: 458px;
+	height: 296px;
+	position: relative;
+	overflow: hidden;
+	border: solid 1px #b99f81;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+#slider ul#show {
+	width:458px;
+	height:1184px;
+	position:absolute;
+	top: 2px;
+	left: 1px;
+}
+/*#slider ul#show {
+	width:1832px;
+	height:296px;
+	position:absolute;
+}*/
+#slider ul#show li {
+	float:left;
+	cursor:pointer;
+}
+#slider img {
+	display:block;
+	width:458px;
+	height:300px!important;/*火狐*/
+
+ 	*height:300px!important;/*IE7+*/
+	height:296px;/*IE6*/
+}
+#number {
+	width:150px;
+	height:25px;
+	position:absolute;
+	bottom:5px;
+	right:5px;
+}
+#number li {
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	line-height:20px;
+	background:#fff;
+	border:solid 1px #b50000;
+	margin-left:5px;
+}
+#number li.on {
+	color: #fff;
+	line-height:20px;
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	border:none;
+	background:#b50000;
+	font-weight: bold;
+	cursor:pointer;
+}

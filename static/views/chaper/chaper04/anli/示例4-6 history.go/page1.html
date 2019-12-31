@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>对话框</title>
+<script type="text/javascript">
+    function goForward() {
+	    if(history.length > 1) {
+            window.history.go(1);
+		} else {
+		    alert("访问历史中只有一张页面");
+		}
+	}
+</script>
+</head>
+<body>
+    <h2>页面1</h2>
+    <input type="button" value="下一页" onclick="goForward()" /><br/>
+	<a href="page2.html">页面2</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var index=0;
+			function show()
+			{
+			if(index%2==0)
+			{
+				document.title="BOM编程";
+			}
+			else
+			{
+				document.title="BOM学习";
+			}	
+			index++;
+			setTimeout("show()",2000);
+			}
+			window.onload=show;
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

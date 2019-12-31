@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery鼠标悬停下拉导航菜单 - 站长素材</title>
+
+<link href="css/menu.css" rel="stylesheet" type="text/css" />
+
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function () {
+    var st = 180;
+    $('#nav_all>li').mouseenter(function () {
+        $(this).find('ul').stop(false, true).slideDown(st);
+    }).mouseleave(function () {
+        $(this).find('ul').stop(false, true).slideUp(st);
+    });
+});
+</script>
+
+</head>
+<body>
+
+<div class="rz_bw_nav001_m">
+	<div class="nav">
+		<div class="nav_main">
+			<ul id="nav_all">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">关于我们</a>
+					<ul style="display: none;">
+						<li style="width: 8px;"></li>
+						<li><a href="#">公司简介</a></li>
+						<li><a href="#">企业文化</a></li>
+						<li><a href="#">荣誉资质</a></li>
+					</ul>
+				</li>
+				<li><a href="#">服务项目</a>
+					<ul style="display: none;">
+						<li style="width: 28px;"></li>
+						<li><a href="#">网站建设</a></li>
+						<li><a href="#">微信开发</a></li>
+						<li><a href="#">电商商务</a></li>
+						<li><a href="#">安卓开发</a></li>
+						<li><a href="#">苹果开发</a></li>
+						<li><a href="#">动画制作</a></li>
+						<li><a href="#">艺术设计</a></li>
+					</ul>
+				</li>
+				<li><a href="#">
+					<div style="_margin-top: 12px;"></div>合作案例</a>
+					<ul style="display: none;">
+						<li style="width: 52px;"></li>
+						<li><a href="#">网站建设</a></li>
+						<li><a href="#">微信开发</a></li>
+						<li><a href="#">电商商务</a></li>
+						<li><a href="#">安卓开发</a></li>
+						<li><a href="#">苹果开发</a></li>
+						<li><a href="#">动画制作</a></li>
+						<li><a href="#">艺术设计</a></li>
+					</ul>
+				</li>
+				<li><a href="#">新闻资讯</a>
+					<ul style="display: none;">
+						<li style="width: 340px;"></li>
+						<li><a href="#">公司动态</a></li>
+						<li><a href="#">行业新闻</a></li>
+					</ul>
+				</li>
+				<li><a href="#">信息收集</a>
+					<ul style="display: none;">
+						<li style="width: 398px;"></li>
+						<li><a href="#">设计欣赏</a></li>
+						<li><a href="#">资源共享</a></li>
+						<li><a href="#">百家杂谈</a></li>
+					</ul>
+				</li>
+				<li><a href="#">养生堂</a>
+					<ul style="display: none;">
+						<li style="width: 260px;"></li>
+						<li><a href="#">开心一刻</a></li>
+						<li><a href="#">美食餐饮</a></li>
+						<li><a href="#">世界之醉</a></li>
+						<li><a href="#">科技之炫</a></li>
+						<li><a href="#">植物之美</a></li>
+						<li><a href="#">世界之美</a></li>
+						<li><a href="#">玩物把件</a></li>
+						<li><a href="#">养生保健</a></li>
+						<li><a href="#">心灵鸡汤</a></li>
+					</ul>
+				</li>             
+			</ul>
+			<div class="rz_bw_server_tel">服务热线：138-0000-0000</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

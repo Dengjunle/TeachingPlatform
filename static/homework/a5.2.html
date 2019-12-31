@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物车</title>
+<script type="text/javascript">
+	function jrgwc(btn){
+    //根据点击的按钮获取同行的商品名和单价。
+      var tr = btn.parentNode.parentNode;
+      //爷爷有很多孙子td，tds。
+      var tds = tr.getElementsByTagName("td");
+      //第一个td的内容是商品名，第二个是单价
+      var  name=  tds[0].innerText;
+      var price = tds[1].innerText;
+
+      //判断如果加入的商品购物车已经有了就在购物车里加1；
+    //先获取加入商品的name
+    //获取购物车中的每一行
+      var tbody = document.getElementById("goods");
+      var trs = tbody.getElementsByTagName("tr");
+      //遍历这些行，获取每一行的商品名
+      for(var i=0;i<trs.length;i++){
+
+          var tds = trs[i].getElementsByTagName("td");
+          if(tds[0].innerText==name){
+              var inputs = tds[2].getElementsByTagName("input");
+              inputs[1].value = parseInt(inputs[1].value)+1;
+              var qe = tds[3];//获取商品的全额，并改变全额
+              qe.innerText = parseInt(inputs[1].value)*parseInt(tds[1].innerText);
+               total(); //调用合计函数
+              return;
+              }
+
+          }
+
+
+      //创建一个tr将其插入到购物车table下
+      var tbody = document.getElementById("goods");
+      //在tbody下插入一行
+      var ntr = tbody.insertRow();
+      //直接去写的
+        ntr.innerHTML = 
+          '<td>'+name+'</td>'+
+      '<td>'+price+'</td>'+
+      '<td><input type="button" value="-" onclick="decrease(this);" />'+
+        '<input type="text" size="3" readonly value="1" />'+
+        '<input type="button" value="+" onclick="increase(this);"/></td>'+
+      '<td>'+price+'</td>'+
+      '<td><input type="button" value="删除" onclick="sc(this);"  /></td>'; 
+      total(); 
+    }
+    //删除tr
+    function sc(btn){
+        //获取要删除的tr
+        var tr = btn.parentNode.parentNode;
+        //tr的父亲然后删除孩子tr，删除的tr就是上面的那么用btn获取的tr
+        tr.parentNode.removeChild(tr);
+         total();
+        }
+        //增加数量
+    function increase (btn){
+
+
+        var td =btn.parentNode;
+         var inputs =  td.getElementsByTagName("input");
+         var text = inputs[1];
+         //获取当前行的数量
+         var amount = parseInt(text.value);
+            //将数量+1
+         text.value =++amount;
+         var tr = btn.parentNode.parentNode;
+         var tds = tr.getElementsByTagName("td");
+         var price = parseFloat(tds[1].innerText);
+         tds[3].innerText = price*amount;
+         //计算金额 = 单价*数量；
+        total();
+        }
+        //减法
+        function decrease(btn){
+            var td = btn.parentNode;
+            var inputs = td.getElementsByTagName("input");
+            //数量
+            var text = inputs[1];
+            var amount = parseInt(text.value);
+            //让小于1后就按钮就失效了。尽量不要提示。
+            if (amount==1){
+                //等于1的时候这个函数就结束，不再执行了。
+                return;
+                }
+            //减少数量
+            text.value = --amount;
+            //改变全额
+            var tr = btn.parentNode.parentNode;
+            var tds = tr.getElementsByTagName("td");
+            //获取单价
+            var price = parseFloat(tds[1].innerText);
+             tds[3].innerText=price*amount; 
+
+             total();   
+            }   
+
+
+        function total(){
+
+            //1、获取购物车中的商品行
+            var tbody = document.getElementById("goods");
+            var trs = tbody.getElementsByTagName("tr");
+            //2、遍历这些行，获取每一行的金额
+            var sum=0;
+            for(var i = 0; i<trs.length;i++){
+                //当前行
+                var tr = trs[i];
+                //取当前行的金额列，即第四列
+                var tds = tr.getElementsByTagName("td");
+                var mny = parseFloat(tds[3].innerText);
+                //3、将每一行的金额累计
+
+                sum+=mny;
+
+                }
+
+            //4、将合计值写入到合计行中
+            var total = document.getElementById("total");
+            total.innerText = sum;
+            }
+</script>
+<style type="text/css">
+table, tr, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    margin: 60px auto;
+}
+body {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+}
+td {
+    padding: 10px;
+}
+p {
+    font-size: 36px;
+    text-align: center;
+}
+thead {
+    background-color: #CCC;
+}
+tr:hover {
+    background-color: #CCC;
+}
+</style>
+</head>
+
+<body>
+<p>商品</p>
+<table id="sp">
+  <thead>
+    <tr >
+      <th>商品</th>
+      <th>单价</th>
+      <th>颜色</th>
+      <th>库存</th>
+      <th>好评率</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>罗技鼠标</td>
+      <td>80</td>
+      <td>黑色</td>
+      <td>893</td>
+      <td>98%</td>
+      <td><button onclick="jrgwc(this);" >加入购物车</button></td>
+      <!--传的this就是这个button，被点击的button--> 
+    </tr>
+    <tr>
+      <td>键盘</td>
+      <td>150</td>
+      <td>黑色</td>
+      <td>9028</td>
+      <td>96%</td>
+      <td><button onclick="jrgwc(this);">加入购物车</button></td>
+    </tr>
+    <tr>
+      <td>手机壳</td>
+      <td>60</td>
+      <td>透明</td>
+      <td>672</td>
+      <td>99%</td>
+      <td><button onclick="jrgwc(this);">加入购物车</button></td>
+    </tr>
+    <tr>
+      <td>U盘</td>
+      <td>70</td>
+      <td>红色</td>
+      <td>482</td>
+      <td>100%</td>
+      <td><button onclick="jrgwc(this);">加入购物车</button></td>
+    </tr>
+    <tr>
+      <td>蓝牙耳机</td>
+      <td>100</td>
+      <td>蓝色</td>
+      <td>8937</td>
+      <td>95%</td>
+      <td><button onclick="jrgwc(this);">加入购物车</button></td>
+    </tr>
+  </tbody>
+</table>
+<p>购物车</p>
+<table id="gwc">
+  <thead>
+    <tr>
+      <td >商品</td>
+      <td>单价(元)</td>
+      <td>数量</td>
+      <td>全额</td>
+      <td>删除</td>
+    </tr>
+  </thead>
+  <tbody id="goods">
+
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">总计</td>
+      <td id="total"></td>
+      <td></td>
+    </tr>
+  </tfoot>
+</table>
+</body>
+</html>

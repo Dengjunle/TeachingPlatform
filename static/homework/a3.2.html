@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<script>
+function show()
+{
+	var r = Number(document.getElementById("banjing").value);
+	alert("半径为"+r+"的圆的周长为"+(2*r*Math.PI).toFixed(2)+",面积为"+(Math.PI*r*r).toFixed(2));
+}
+</script>
+</head>
+
+<body>
+		<p>圆的半径<input type="text" id="banjing"/></p>
+		<input type="button" value="submit" onclick="show()"/>
+</body>
+</html>

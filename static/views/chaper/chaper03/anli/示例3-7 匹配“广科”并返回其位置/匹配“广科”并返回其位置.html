@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+
+var str = "欢迎来到广科院"; 
+var reg = new RegExp("广科","g");
+var result;
+
+while ((result = reg.exec(str)) != null)  {
+  document.write(result);
+  document.write("<br />");
+  document.write(reg.lastIndex);
+ }
+</script>
+
+</head>
+
+<body>
+</body>
+</html>

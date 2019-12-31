@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: "宋体";
+	font-size: 12px;
+	background-color: #CCC;
+	margin: 0px;
+}
+#container {
+	width: 756px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#top {
+	background-image: url(../anliImages/top.jpg);
+	height: 155px;
+	width: 756px;
+}
+#main {
+	background-color: #FFF;
+	height: 741px;
+	width: 756px;
+}
+#bottom {
+	background-image: url(../anliImages/bottom.jpg);
+	height: 80px;
+	width: 756px;
+}
+.left {
+	float: left;
+	height: 741px;
+	width: 190px;
+}
+.center {
+	float: left;
+	height: 741px;
+	width: 1px;
+}
+.right {
+	float: left;
+	height: 741px;
+	width: 550px;
+	padding-left: 5px;
+}

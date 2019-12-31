@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>为div绑定事件</title>
+<style type="text/css">
+div{
+	width:200px;
+	height:200px;
+	background:#FCC;
+	margin:10px;
+	border:1px solid #000;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(e) {
+	function fn1() {
+	  alert('单击1');
+	  }
+	  function fn2() {
+	  alert('单击2');
+	  }
+	  $("#btn").bind('click', fn1);
+	  $("#btn").bind('click', fn2);
+	  $("#btn").unbind('click', fn1); 	//只删除fn1 处理函数的事件
+
+    });
+	
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮" id="btn"/>
+</body>
+</html>

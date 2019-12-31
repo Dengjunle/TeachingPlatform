@@ -1,0 +1,55 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>示例10-6</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="css/default.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function () {
+		$("#begin").click(function () {
+			for (var i = 0; i < 5; i++) {
+				$("div").animate({
+					left: '550px',
+					opacity: '0.5',//透明度
+					height: '250px',
+					width: '250px'
+				}, 'slow').animate({
+					left: '0px',
+					opacity: '1',
+					height: '100px',
+					width: '100px'
+				}, 'slow');
+			}
+			
+		});
+		//停止当前动画，跳入下一个动画
+		$("#stop").click(function () {
+			$("div").stop();
+		})
+		//停止当前动画，跳到当前动画终点，进入下一个动画一个
+		$("#stop1").click(function () {
+			$("div").stop(false, true);
+		})
+		//停止所有动画，保持当前状态，瞬间停止
+		$("#stop2").click(function () {
+			$("div").stop(true,false);
+		})
+		//停止所有动画，跳到当前动画终点
+		$("#stop3").click(function () {
+			$("div").stop(true, true);
+		})
+	});
+	</script> 
+</head>
+ 
+<body>
+	<button id="begin">开始动画</button></br>
+    <button id="stop">停止当前动画，进入下一个动画</button></br>
+    <button id="stop1">停止当前动画，跳到当前动画终点，进入下一个动画</button></br>
+    <button id="stop2">瞬间停止</button></br>
+    <button id="stop3">停止所有动画，跳到当前动画终点</button></br>
+    <div></div>
+
+</body>
+</html>

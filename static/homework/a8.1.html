@@ -1,0 +1,149 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<BODY>
+
+<script type="text/javascript">
+	var roll_image = new Array;
+var image_link = new Array;
+var small_img = new Array;
+
+roll_image[0] = 'images/01.jpg';
+image_link[0] = 'http://www.zcool.com.cn/';
+small_img[0] = 'images/main_flash_button1_on.gif';
+
+roll_image[1] = 'images/02.jpg';
+image_link[1] = 'http://www.zcool.com.cn/';
+small_img[1] = 'images/main_flash_button2_on.gif';
+
+roll_image[2] = 'images/03.jpg';
+image_link[2] = 'http://www.zcool.com.cn/';
+small_img[2] = 'images/main_flash_button3_on.gif';
+
+roll_image[3] = 'images/04.jpg';
+image_link[3] = 'http://www.zcool.com.cn/';
+small_img[3] = 'images/main_flash_button4_on.gif';
+
+roll_image[4] = 'images/05.jpg';
+image_link[4] = 'http://www.zcool.com.cn/';
+small_img[4] = 'images/main_flash_button5_on.gif';
+
+roll_image[5] = 'images/06.jpg';
+image_link[5] = 'http://www.zcool.com.cn/';
+small_img[5] = 'images/main_flash_button6_on.gif';
+
+roll_image[6] = 'images/07.jpg';
+image_link[6] = 'http://www.zcool.com.cn/';
+small_img[6] = 'images/main_flash_button7_on.gif';
+
+var cliImg = '';
+var cliImgSrc = '';
+var imgNo = Math.round(Math.random() * 7);
+
+var interval = 3000;
+var setTime = '';
+
+function click_simg(ci, no){
+ var pImg = document.all.bigimg;
+ var pLink = document.all.imglink;
+
+ if(cliImg == '') {
+  cliImg = ci;
+  cliImgSrc = ci.src;
+  ci.src = small_img[no];
+  imgNo=no;
+  pImg.src =roll_image[no];
+  pLink.href = image_link[no];
+ } else if(cliImg != ci) {
+  cliImg.src = cliImgSrc;
+  cliImg = ci;
+  cliImgSrc = ci.src;
+  ci.src = small_img[no];
+  imgNo=no;
+  pImg.src =roll_image[no];
+  pLink.href = image_link[no];
+ }
+ clearTimeout(setTime);
+ setTime=setTimeout("rotate()",interval);
+}
+
+function rotate(){
+ imgNo = (imgNo >= 6) ? 0 : imgNo+1;
+ var ci = eval('document.all.num_img'+imgNo);
+
+ document.all.bigimg.filters.blendTrans.apply();
+ document.all.imglink.href=image_link[imgNo];
+ document.all.bigimg.src=roll_image[imgNo];
+ document.all.bigimg.filters.blendTrans.play();
+
+ if(cliImg == '') {
+  cliImg = ci;
+  cliImgSrc = ci.src;
+  ci.src = small_img[imgNo];
+ } else if(cliImg != ci) {
+  cliImg.src = cliImgSrc;
+  cliImg = ci;
+  cliImgSrc = ci.src;
+  ci.src = small_img[imgNo];
+ }
+
+ setTime=setTimeout("rotate()",interval);
+}
+</script>
+<TABLE cellSpacing=0 cellPadding=0 width=520 border=0>
+  <TBODY>
+    <TR>
+      <TD height=338>
+<A onfocus=this.blur() href="#" name=imglink><IMG style="FILTER: blendTrans(duration=1)" height=338 src="images/01.jpg" width=520 border=0 name=bigimg></A>
+      </TD>
+    </TR>
+    <TR>
+      <TD height=27><TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+          <TR>
+            <TD width=3></TD>
+            <TD width=61><IMG style="CURSOR: hand" 
+                        onclick="click_simg(this, 0);" height=15 
+                        src="images/main_flash_button1.gif" width=61 
+                        border=0 name=num_img0></TD>
+            <TD width=3></TD>
+            <TD width=61><IMG style="CURSOR: hand" 
+                        onclick="click_simg(this, 1);" height=15 
+                        src="images/main_flash_button2.gif" width=61 
+                        border=0 name=num_img1></TD>
+            <TD width=3></TD>
+            <TD width=61><IMG style="CURSOR: hand" 
+                        onclick="click_simg(this, 2);" height=15 
+                        src="images/main_flash_button3.gif" width=61 
+                        border=0 name=num_img2></TD>
+            <TD width=3></TD>
+            <TD width=61><IMG style="CURSOR: hand" 
+                        onclick="click_simg(this, 3);" height=15 
+                        src="images/main_flash_button4.gif" width=61 
+                        border=0 name=num_img3></TD>
+            <TD width=3></TD>
+            <TD width=61><IMG style="CURSOR: hand" 
+                        onclick="click_simg(this, 4);" height=15 
+                        src="images/main_flash_button5.gif" width=61 
+                        border=0 name=num_img4></TD>
+            <TD width=3></TD>
+            <TD width=61><IMG style="CURSOR: hand" 
+                        onclick="click_simg(this, 5);" height=15 
+                        src="images/main_flash_button6.gif" width=61 
+                        border=0 name=num_img5></TD>
+            <TD width=3></TD>
+            <TD width=61><IMG style="CURSOR: hand" 
+                        onclick="click_simg(this, 6);" height=15 
+                        src="images/main_flash_button7.gif" width=61 
+                        border=0 name=num_img6></TD>
+            <TD 
+              width=72></TD>
+          </TR>
+        </TBODY>
+      </TABLE></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<SCRIPT>rotate();</SCRIPT>
+</BODY></HTML>

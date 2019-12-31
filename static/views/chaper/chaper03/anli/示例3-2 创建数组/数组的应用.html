@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>数组的应用</title>
+<script type="text/javascript">
+	var fruit=new Array(5);
+	fruit[0]="Apple";
+	fruit[1]="Orange";
+	fruit[2]="Banner";
+	fruit[3]="Peach";
+	fruit[4]="Grape";
+	document.write("<h3>输出数组：</h3>");
+	for(var i=0;i<fruit.length;i++)
+	{
+		document.write("<h5>第"+i+"个元素是："+fruit[i]+"<br/></h5>");
+	}
+	document.write("<h3>反转后的数组：</h3>");
+	fruit.reverse();
+	for(var i=0;i<fruit.length;i++)
+	{
+		document.write("<h5>第"+i+"个元素是："+fruit[i]+"<br/></h5>");
+	}
+	document.write("<h3>排序后的数组：</h3>");
+	fruit.sort();
+	for(var i in fruit)
+	{
+		document.write("<h5>第"+i+"个元素是："+fruit[i]+"<br/></h5>");
+	}
+	document.write("<h3>使用连接符连接数组：</h3>")
+	var str=fruit.join("-");
+	document.write(str);
+</script>
+</head>
+
+<body>
+</body>
+</html>

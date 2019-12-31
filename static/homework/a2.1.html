@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+<title>习题2</title>
+<script language="javascript" type="text/javascript">
+/*
+简易购物车的计算方式：商品数量*单价+运费=合计
+*/
+function cal(){
+	var num= parseInt(document.myform.num.value);	//获得商品数量
+	var price=parseFloat(document.myform.price.value);	//获得商品单价
+	var cost=parseFloat(document.myform.cost.value);	//获得运费
+	var amount=num*price+cost;
+	document.myform.amount.value=amount;				//计算费用并向文本框复制赋值
+	
+}
+</script>
+</head>
+
+<body>
+<form action="" method="post" name="myform">
+<table width="533" height="133" border="1" bgcolor="#FFC8C8" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <TH colspan="5">简易购物车</TH>
+    </tr>
+  <tr  align="center">
+    <td width="92">商品名称</td>
+    <td width="100">数量(件)</td>
+    <td width="110">单价(元)</td>
+    <td width="101">运费(元)</td>
+    <td width="130"><INPUT name="button2" type="button" value="合计" onClick="cal()"></TD>
+  </tr>
+   <tr align="center">
+    <td>跑跑道具</td>
+    <td><input type="text" name="num" size="10"></td>
+    <td><input type="text" name="price" size="10" ></td>
+    <td><input type="text" name="cost" size="10"></td>
+    <td><input type="text" name="amount" size="10">元</td>
+   </tr>
+</table>
+</form>
+</body>
+</html>

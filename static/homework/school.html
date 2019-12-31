@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>请从列表中选择</title>
+<style>
+#mdA table,#mdA table td,#mdA table th{border:1px solid #000000;border-collapse:collapse;}
+</style>
+<script type="text/javascript">
+function choose(obj)  
+{  
+//对子窗口本身操作，使用self对象，对父窗口操作使用opener对象，这是关键  
+  
+    var parent=window.opener.document.getElementById("school");  
+    parent.value=obj.innerHTML;  
+    self.close();  
+    window.opener.focus();  
+}  
+</script>  
+</head>
+
+<body>
+<div id="mdA">
+<table width="300" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东科学技术职业学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">番禺职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">吉林大学珠海学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">北京师范大学珠海学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">深圳信息职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东轻工职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">顺德职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东交通职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东水利电力职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东岭南职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东食品药品职业学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">珠海城市职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东建设职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">民办南华工商学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东女子职业技术学院</a></td>
+  </tr>
+   <tr>
+    <td><a href="#" onclick="choose(this)">肇庆医学高等专科学校</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">清远职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东工贸职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广州城建职业学院</a></td>
+  </tr>
+   <tr>
+    <td><a href="#" onclick="choose(this)">广州城市职业学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广州民航职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">中山火炬职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东机电职业技术学院</a></td>
+  </tr>
+   <tr>
+    <td><a href="#" onclick="choose(this)">清远职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">江门职业技术学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">广东省外语艺术职业学院</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="choose(this)">河源职业技术学院</a></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

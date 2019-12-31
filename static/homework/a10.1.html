@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery实现的纵向移动的焦点图片轮换</title>
+		<link href="css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="css/slider.css" rel="stylesheet" type="text/css" />
+
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var len = $("#number li").length;
+				var index = 0;
+				var timer;
+				$("#number li").mouseover(function() {
+					index = $("#number li").index(this);
+					show(index);
+				}).eq(0).trigger("mouseover");
+
+				$("#slider").hover(function() {
+					clearTimeout(timer);
+				}, function() {
+					timer = setInterval(function() {
+						show(index);
+						index++;
+						if(index == len)
+							index = 0;
+
+					}, 3000);
+				}).trigger("mouseleave");
+
+			})
+
+			function show(index)
+			{
+				var height=$("#slider").height();
+				$("#show").stop(true,false).animate({top:-(height+5)*index},1000);
+				$("#number li").removeClass("on").eq(index).addClass("on");
+			}
+			//function show(index) {
+			//	var wid = $("#slider").width();
+			//	$("#show").stop(true, false).animate({
+			//		left: -wid * index
+			//	}, 1000);
+			//	$("#number li").removeClass("on").eq(index).addClass("on");
+			//}
+		</script>
+	</head>
+
+	<body>
+		<div id="slider">
+			<ul id="show">
+				<li><img src="images/1.jpg" alt="1" /></li>
+				<li><img src="images/2.jpg" alt="2" /></li>
+				<li><img src="images/3.jpg" alt="3" /></li>
+				<li><img src="images/4.jpg" alt="4" /></li>
+			</ul>
+			<ul id="number">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

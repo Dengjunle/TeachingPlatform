@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>分割与连接字符串</title>
+<script type="text/javascript">
+var str="www-baidu-com";
+var strUrls=str.split("-");
+for(var i=0;i<strUrls.length;i++)
+{
+	document.write(strUrls[i]+"<br/>");
+}
+var url="";
+for(var i=0;i<strUrls.length-1;i++)
+{
+	url=url+strUrls[i].concat(".");
+}
+	url+=strUrls[strUrls.length-1];
+document.write(url);
+</script>
+</head>
+
+<body>
+</body>
+</html>

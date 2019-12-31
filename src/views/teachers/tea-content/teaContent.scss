@@ -1,0 +1,37 @@
+.content-center {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px #c0c0c0;
+    .content-center-item {
+      margin: 0 auto;
+      .el-menu-demo {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        .el-menu-item {
+          margin-right: 60px;
+        }
+        .el-menu-item.is-active {
+          border-bottom: 2px solid #ffc400;
+          color: #303133;
+        }
+        .el-button--success {
+          color: #fff;
+          background-color: #ffc400;
+          border-color: #ffc400;
+        }
+      }
+    }
+  }
+  .content-footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    .content-footer-item {
+      width: 1200px;
+      margin: 0 auto;
+      padding: 40px 0;
+      
+    }
+  }

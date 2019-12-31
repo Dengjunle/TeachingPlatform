@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>简写事件</title>
+<style type="text/css">
+h2{
+	color:#fff;
+	background:#39F;
+	font-weight:bold;
+	width:500px;
+	height:40px;
+	font-family:"黑体";
+	padding-top:10px;
+	padding-left:20px;
+	margin:0px;
+	padding:10px 0px 0px 10px;
+}
+ul{
+	width:480px;
+	background:#FF9;
+	margin:0px;
+	padding:10px 0px 0px 30px;
+}
+ul li{
+	list-style-type:circle;
+	font-family:"微软雅黑";
+	height:25px;
+}
+	
+</style>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(e) {
+        $("h2").mouseover(function(){
+			$(this).next().hide();		
+    });
+	  $("h2").mouseout(function(){
+			$(this).next().show();		
+    });
+});
+</script>
+</head>
+
+<body>
+<h2>用户交互设计学习参考书</h2>
+<ul>
+	<li>JavaScript DOM编程</li>
+    <li>锋利的JQuery</li>
+    <li>JQuery入门与提高</li>
+    <li>JavaScript高级编程</li>
+    <li>JQuery权威指南</li>
+    <li>JQuery实战</li>
+</ul>
+</body>
+</html>

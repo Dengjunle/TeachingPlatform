@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>计算器</title>
+	<style type="text/css">
+		#calculator
+		{
+			margin: 0 auto;
+			border: #000  2px solid;
+			border-radius: 15px 15px 15px 15px;
+			width: 300px;
+			height: 460px;
+			background: #000000;
+		}
+		#hiddentxt
+		{
+			height: 100px;
+		}
+		#txt
+		{
+			width: 88%;
+			height: 80px;
+			border-radius: 12px 12px 12px 12px;
+			font-size: 24px;
+			font-weight: bold;
+			background: #000;
+			color: white;
+			border: #fff 5px solid;
+			margin-top: 15px;
+			margin-left:12px;
+			font-family: "Comic Sans MS", "Leelawadee UI";
+		}
+		input[type=button]
+		{
+			width: 56px;
+			height: 56px;
+			margin-top: 10px;
+			margin-left: 13px;
+			border-radius: 10px;
+			font-size: 20px;
+			font-weight: bold;
+			background: #fff;
+			font-family:"Comic Sans MS";
+		}
+		#Zero,#AC
+		{
+			width: 129px;
+		}
+		input[type=button]:hover
+		{
+			color: #fff;
+			background: #000;
+			animation-name:mybutton;
+			animation-duration: 0.8s;
+       	    animation-timing-function:ease-in-out;
+		}
+		@keyframes mybutton
+		{
+			0%
+			{
+				background: #fff;
+				color: #000;
+			}
+	
+			100%
+			{
+				background:#000;
+				color: #fff;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="calculator">
+		
+	<input type="text" id="txt"  readonly><br>
+	<input type="button" id="AC" value="AC" onClick="Clear()">
+	<input type="button"  onClick="TNumber(this.value)" value="/">
+	<input type="button"  onClick="TNumber(this.value)" value="%">
+	<br>
+		
+	<input type="button" id="Seven" onClick="TNumber(this.value)" value="7">
+	<input type="button" id="Eight" onClick="TNumber(this.value)" value="8">
+	<input type="button" id="Nine" onClick="TNumber(this.value)" value="9">
+	<input type="button"  onClick="TNumber(this.value)" value="+">
+	<br>
+		
+	<input type="button" id="Four"  onClick="TNumber(this.value)" value="4">
+	<input type="button" id="Five" onClick="TNumber(this.value)" value="5">
+	<input type="button" id="Six" onClick="TNumber(this.value)" value="6">
+	<input type="button"  onClick="TNumber(this.value)" value="-">
+	<br>
+		
+	<input type="button" id="One"  onClick="TNumber(this.value)" value="1" >
+	<input type="button" id="Two"  onClick="TNumber(this.value)" value="2"  >
+	<input type="button" id="Three" onClick="TNumber(this.value)" value="3">
+		<input type="button"  onClick="TNumber(this.value)" value="*">
+<br>
+
+	<input type="button" id="Zero" onClick="TNumber(this.value)" value="0">
+	<input type="button" id="Dot" onClick="TNumber(this.value)" value=".">
+	<input type="button"  onClick="Calculator()" value="=">
+		
+	</div>
+	
+	<script type="text/javascript">
+	
+		/*----------------------------------------------------*/
+			var text =document.getElementById("txt");
+			
+			var numObj="";
+			var Total =0;
+		/*----------------------------------------------------*/
+		
+		function TNumber(obj) //输入
+		{		
+					numObj+=obj; 
+					text.value=numObj; //字符串连接
+		}
+		
+
+		function Calculator( )//计算
+		{
+			var str =text.value;
+			Total=eval(text.value); //利用eval()函数编译text.value里面的字符串算式
+			text.value=str+"="+Total;
+			 numObj="";
+		}
+		/*----------------------------------------------------*/
+	
+		function Clear()//清除屏幕
+		{
+			text.value="";
+			numObj="";
+		}
+	</script>
+</body>
+</html>

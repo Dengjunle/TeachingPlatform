@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>事件冒泡</title>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $('input').click(function (e) {
+		$("#msg").html($("#msg").html()+"按钮被触发了！<br/>");
+		//e.stopPropagation();
+		return false;
+		
+	});
+	$('div').click(function (e) {
+		$("#msg").html($("#msg").html()+"div 层被触发了！<br/>");	
+		//e.stopPropagation();	
+		return false;
+	});
+	$(document).click(function (e) {
+		$("#msg").html($("#msg").html()+"文档页面被触发了！<br/>");	
+	//	e.stopPropagation();	
+		return false;
+	});
+});
+</script>
+<style type="text/css">
+#content{
+	width:200px;
+	height:200px;
+	background:red;
+}
+</style>
+</head>
+
+<body>
+<div id="content">
+<input type="button" value="按钮" />
+</div>
+<div id="msg"></div>
+</body>
+</html>

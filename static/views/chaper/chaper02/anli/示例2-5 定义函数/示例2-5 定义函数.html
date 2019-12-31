@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>函数</title>
+<script type="text/javascript">
+function showHello(count){
+	for(var i=0;i<count;i++){
+		document.write("<h3>Hello Everybody!</h3>");
+	}
+}
+</script>
+</head>
+
+<body>
+	<input type="button" name="btn" id="btn" value="输入显信息的次数" onclick="showHello(prompt('请输入显示信息的次数：',''))"/>
+</body>
+</html>

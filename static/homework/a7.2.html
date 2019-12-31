@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+  body{font-size:13px}
+  #divFrame{border:solid 1px #666;width:301px;overflow:hidden}
+  #divFrame .clsHead{background-color:#eee;padding:8px;height:18px;cursor:pointer}
+  #divFrame .clsHead h3{padding:0px;margin:0px;float:left}
+  #divFrame .clsHead span{float:right;margin-top:3px}
+  #divFrame .clsContent{padding:8px}
+  #divFrame .clsContent ul{list-style-type:none;margin:0px;padding:0px}
+  #divFrame .clsContent ul li{float:left;width:95px;height:23px;line-height:23px}
+  #divFrame .clsBot{float:right;padding-top:5px;padding-bottom:5px}
+  .GetFocus{background-color:#eee}
+</style>
+
+</head>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+			var $lis = $("li:gt(5)");
+			var $img = $("div.clsBot img");
+			var $atext = $("div.clsBot a");
+			$lis.hide();
+			$("div.clsBot a").click(function(){
+				if($lis.is(":visible")){
+					$lis.hide();
+					$atext.text("展开");
+					$img.attr("src","down.gif");
+				}else{
+					$lis.show();
+					$atext.text("简化");
+					$img.attr("src","up.gif");
+				}
+			});
+		});
+</script>
+<body>
+<div id="divFrame">
+  <div class="clsHead">
+    <h3>图书分类</h3>
+    <span><img src="down.gif" alt="" /></span>
+  </div>
+  <div class="clsContent">
+    <ul>
+      <li><a href="#">小说</a><i>(1110) </i></li>
+      <li><a href="#">文艺</a><i>(230) </i></li>
+      <li><a href="#">青春</a><i>(1430) </i></li>
+      <li><a href="#">少儿</a><i>(235) </i></li>
+      <li><a href="#">生活</a><i>(7809) </i></li>
+      <li><a href="#">社科</a><i>(876) </i></li>
+      <li><a href="#">管理</a><i>(1234) </i></li>
+      <li><a href="#">计算机</a><i>(2434) </i></li>
+      <li><a href="#">教育</a><i>(234) </i></li>
+      <li><a href="#">工具书</a><i>(7665) </i></li>
+      <li><a href="#">引进版</a><i>(4557) </i></li>
+      <li><a href="#">其他类</a><i>(4543) </i></li>
+    </ul>
+    <div class="clsBot"><a href="#">展开</a>
+      <img src="down.gif">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>特殊事件</title>
+<style type="text/css">
+div{
+	width:100px;
+	height:100px;
+	background-color:#FC9;
+	font-size:18px;
+	font-weight:bold;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function(e) {
+     	$("#city").one("click",function(){
+			alert("欢迎来到珠海！");
+		});   
+    });
+</script>
+</head>
+
+<body>
+  <div id="city">人在珠海</div>
+</body>
+</html>

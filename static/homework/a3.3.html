@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>随机点名器</title>
+<style>
+#big{
+	width:400px;
+	height:450px;
+	margin:0 auto;}
+#showNumber{
+	width:400px;
+	height:300px;
+	font-size:200px;
+	text-align:center;}
+#showName{
+	width:400px;
+	height:100px;
+	font-size:80px;
+	text-align:center;}
+.start{
+	margin-left:100px;
+	margin-right:90px;}
+.start,.stop{
+	width:60px;
+	height:60px;
+	border-radius:60px;
+	background:#F90;
+	cursor:pointer;
+	cursor:hand;
+	float:left;
+	text-align:center;
+	line-height:60px;
+	font-size:20px;}
+</style>
+<script type="text/javascript">
+var timer;
+var stu = ["陈茂洁","邱梓嘉","黄春平","谢杰锋","潘健雄","曹家辉","彭海","蔡楚乐","廖剑锋","冯志斌","梁铭泉","罗斯乾","郑锐朗","林倬","陈奕涠","高文江","郭蒙蒙","陈汉杰","徐利兵","侯新鹏","黄卓辉","陈泽权","吴文双","丁有生","丁度锦","黄泽远","洪坤锋","何嘉顺","谢美霞","陈典渠","郑泳银","张伟涛","庄增鑫","汤兆锋","周伟杰","陈永鑫","林松金","苏景","夏佳纯","曾桂清","邓润发","谢林峰","蓝钟鸿","符鋆","梁钰莹","李永锋","李秋婷","张景","何重涛","肖振宇","王海刚","方思能","肖文浩","李芳朗","林仕炳","许其耕","曹斌","庄志凯","陈达恒"];
+function showNumName(){
+	clearTimeout(timer);
+	var num = Math.floor(Math.random()*59)+1;
+	document.getElementById("showNumber").innerHTML = num;
+	document.getElementById("showName").innerHTML = stu[num-1];
+	timer = setTimeout("showNumName()",100);	
+}
+function stopRolling(){
+	clearTimeout(timer);
+}
+</script>
+</head>
+
+<body>
+<div id="big">
+	<div id="showNumber">
+    	0
+    </div>
+    <div id="showName">
+       ---
+    </div>
+    <div class="start" onclick="showNumName()">启动</div>
+    <div class="stop" onclick="stopRolling()">停止</div>
+</div>
+</body>
+</html>

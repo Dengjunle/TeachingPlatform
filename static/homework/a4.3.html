@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全选与全不选</title>
+		<script type="text/javascript">
+			function myfavorite()
+			{
+				var fruits=document.getElementsByName("fruit");
+				var str="";
+				if(document.getElementById("choose").value=="全选")
+					{
+						for(var i=0;i<fruits.length;i++)
+						{
+							fruits[i].checked=true;
+							str=str+fruits[i].value+"<br/>";
+						}
+							
+						document.getElementById("choose").value="全不选";
+					}
+					else
+					{
+						for(var i=0;i<fruits.length;i++)
+							fruits[i].checked=false;
+						document.getElementById("choose").value="全选";
+					}
+				
+				document.getElementById("showFruit").innerHTML=str;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>你喜欢的水果：</h1>
+		<input type="checkbox" value="苹果" name="fruit" />苹果
+		<input type="checkbox" value="香蕉" name="fruit" />香蕉
+		<input type="checkbox" value="西瓜" name="fruit" />西瓜
+		<input type="checkbox" value="橙子" name="fruit" />橙子
+		<input type="checkbox" value="葡萄" name="fruit" />葡萄
+		<input type="button" value="全选" id="choose" onclick="myfavorite()" />
+		<h2 id="showFruit"></h2>
+	</body>
+</html>

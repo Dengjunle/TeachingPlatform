@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>示例10-5</title>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="js/jquery-1.8.3.min.js"></script>
+<script language="javascript">
+$(function(){
+	$("button").click(function(){
+		$("div").animate({left:'250px'}, 3000);
+	}); //简单动画
+	
+	//累加动画
+	/*
+	$("button").click(function(){
+		$("div").animate({left:'+=250px'});
+	});
+	*/
+	
+	//同时执行多个动画
+	/*
+	$("button").click(function(){
+		$("div").animate({
+			left:'250px',   //用逗号隔开各个属性
+			top:'300px',
+			opacity:'0.5',
+			height:'150px',
+			width:'150px'
+		});
+	});
+	*/
+	
+	//按照出现的先后顺序执行动画，形成动画队列
+	/*
+	$("button").click(function(){
+		$("div").animate({left:'250px'})
+				.animate({top:'300px'})
+				.animate({opacity:'0.5'})
+				.animate({height:'150px'})
+				.animate({width:'150px'});
+	});
+	*/
+	
+	// 综合动画
+	/*
+	$("button").click(function(){
+		$("div").animate({left:'250px',top:'300px'})
+				.animate({opacity:'0.5'})
+				.animate({width:'150px'},'slow')
+				.slideUp(3000);
+	});
+	*/
+ 
+});
+</script>
+</head>
+
+<body>
+<button>开始动画</button><br />
+<div></div>
+</body>
+</html>
