@@ -72,14 +72,14 @@
                 <iframe ref="task" class="task" frameborder="0"></iframe>
               </div>
               <div class="center">
-                <el-button type="primary" @click="send">点击运行</el-button>
+                <el-button type="primary" :disabled="!stuData.name" @click="send">点击运行</el-button>
                 <el-input
                   v-model="input"
                   type="number"
                   maxlength="2"
                   placeholder="请输入分数"
                 ></el-input>
-                <el-button type="primary" @click="addScore">提交分数</el-button>
+                <el-button type="primary" :disabled="!stuData.name" @click="addScore">提交分数</el-button>
               </div>
               <div class="bottom">
                 <codemirrors :curCode="curCode" @onChanges="changes" />

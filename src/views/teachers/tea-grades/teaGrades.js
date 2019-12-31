@@ -46,6 +46,12 @@ export default {
       this.activeTab = "stuScore";
     },
     async getSubmit() {
+      this.curCode = '';
+      this.input = '';
+      this.stuData = {};
+      this.activeTab = "stuList";
+      this.$refs.task.contentWindow.document.write('');
+      this.$refs.task.contentWindow.document.close();
       let id = this.$route.query.id;
       let notSubmittedList = await this.$api.teacher.notSubmitted(id);
       let submittedList = await this.$api.teacher.submitted(id);
